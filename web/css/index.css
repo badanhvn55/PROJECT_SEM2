@@ -1,0 +1,255 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 16, 2017, 9:24:23 PM
+    Author     : ueda
+*/
+body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+}  
+.container-fluid {
+    padding: 60px 50px;
+}
+.bg-grey {
+    background-color: #f6f6f6;
+}
+.logo-small {
+    color: #f4511e;
+    font-size: 50px;
+}
+.logo {
+    color: #f4511e;
+    font-size: 200px;
+}
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+}
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #f4511e;
+}
+.carousel-indicators li {
+    border-color: #f4511e;
+}
+.carousel-indicators li.active {
+    background-color: #f4511e;
+}
+#myNavbar li a:hover{
+    color: #fff !important;
+    background-color: #f4511e !important;
+}
+#myNavbar .space-dropdown span a{
+    color: #fff;
+}
+footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #f4511e;
+}
+.slideanim {visibility:hidden;}
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+}
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+@-webkit-keyframes slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+    } 
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0%);
+    }
+}
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+}
+
+.space-dropdown{
+    padding: 25px; 
+    width: 290px;
+    max-height: 700px;
+    overflow-y: auto;
+}
+
+.space-dropdown span a{
+    background-color: #f4511e;
+    padding: 3px;
+}
+.menu-list{
+    width: 100%;
+    min-height: 50px;
+    background-color: #eeeeee;
+}
+.slogan{
+    padding-top: 50px;
+}
+.slogan img{
+    width: 99%
+}
+.nav2{
+    padding: 20px;
+    background-color: #19c7c7;
+}
+.nav2 ul{
+    background-color: #eeeeee;
+}
+.nav2 .btn-info, .nav2 .dropdown .dropdown-menu li{
+    padding: 10px 30px 10px 30px;
+}
+.nav2 .dropdown .dropdown-menu li:hover{
+    background-color: orange;
+}
+.nav2 .dropdown .dropdown-menu li a:hover{
+    background-color: orange;
+}
+
+.mySlide > .container {
+    padding: 80px 120px;
+}
+.person {
+    border: 10px solid transparent;
+    margin-bottom: 25px;
+    width: 80%;
+    height: 80%;
+    opacity: 0.7;
+}
+.person:hover {
+    border-color: #f1f1f1;
+}
+.mySlide > .carousel-inner img {
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%); /* make all photos black and white */ 
+    width: 100%; /* Set width to 100% */
+    margin: auto;
+}
+.mySlide > .carousel-caption h3 {
+    color: #fff !important;
+}
+@media (max-width: 600px) {
+    .carousel-caption {
+        display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+}  
+.nav-main{
+    z-index: 9999;
+    box-shadow: 1px 2px 1px silver;   
+}
+.color-orange{
+    color: orange;
+}
+.text-list-main{
+    font-size: 20px;
+    color: orange;
+    padding: 20px;
+}
+.mySlide{
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: orange;
+}
+.book-index1{
+    margin-top: 30px;
+    border: 2px solid #f6f6f6;
+    border-radius: 5px;
+}
+.book-index1-padding{
+    padding: 20px;
+}
+.sub-list-group{
+    float: left;
+    width: 50%;
+    min-height: 210px;
+}
+.sub-list-group > a{
+    color: #303030;
+    text-decoration: none;
+    font-size: 13px;
+}
+.bg-price{
+    width: 60%;
+    color: white;
+    background-color: orange;
+    padding: 5px;
+}
+.more-text-r{
+    float: right;
+    margin: 15px 60px 0 0;
+    text-decoration: none;
+    color: orange;
+}
+.adVer, .logo-nxb{
+    margin-top: 30px;
+}
+.adVer img{
+    padding: 3px;
+}
+.logo-nxb a{
+    padding: 8px;
+}
+.logo-nxb a img{
+     margin-bottom: 10px;
+}
+.logo-nxb a img:hover{
+     background-color: #f4511e;
+}
+footer{
+    border-radius: 5px;
+    background-color: #19c7c7;
+    color: #fff;
+}
+footer .footer-dot{
+    border-left: 1px dotted #303030;
+    border-right: 1px dotted #303030;
+}
+footer .text-footer{
+    padding: 10px;
+}
+footer a{
+    border: 5px solid #d1bdd6;
+    border-radius: 50%;
+    padding: 8px;
+    margin-left: 80%; 
+}
+.space-dropdown li a:hover{
+    background-color: #2fff7b;
+}
+
+

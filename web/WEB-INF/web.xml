@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+
+    <filter>
+        <filter-name>ObjectifyFilter</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ObjectifyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <filter>
+        <filter-name>ApplicationFilter</filter-name>
+        <filter-class>controller.ApplicationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ApplicationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!--Index-->
+
+    <servlet>
+        <servlet-name>HomeController</servlet-name>
+        <servlet-class>controller.HomeController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeController</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+    <!--Product and detail-->
+
+    <servlet>
+        <servlet-name>ListProductController</servlet-name>
+        <servlet-class>controller.ListProductController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListProductController</servlet-name>
+        <url-pattern>/product</url-pattern>
+        <url-pattern>/product/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>listCategoryController</servlet-name>
+        <servlet-class>controller.ListCategoryController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>listCategoryController</servlet-name>
+        <url-pattern>/category</url-pattern>
+    </servlet-mapping>
+
+
+    <!--Shopping Cart Controller-->
+
+
+    <servlet>
+        <servlet-name>addShoppingCartController</servlet-name>
+        <servlet-class>controller.ShoppingCartManager</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addShoppingCartController</servlet-name>
+        <url-pattern>/shoppingCart</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>shoppingCartController</servlet-name>
+        <servlet-class>controller.ShoppingCartController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>shoppingCartController</servlet-name>
+        <url-pattern>/shoppingCart/list</url-pattern>
+    </servlet-mapping>
+    <!--<servlet>-->
+        <!--<servlet-name>users</servlet-name>-->
+        <!--<servlet-class>controller.UserController</servlet-class>-->
+    <!--</servlet>-->
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>users</servlet-name>-->
+        <!--<url-pattern>/user</url-pattern>-->
+    <!--</servlet-mapping>-->
+
+    <!--Test-->
+
+    <servlet>
+        <servlet-name>checkOutController</servlet-name>
+        <servlet-class>controller.CheckOutController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>checkOutController</servlet-name>
+        <url-pattern>/bill/checkout</url-pattern>
+    </servlet-mapping>
+
+
+
+    <!-- Start of Endpoint-->
+    <servlet>
+        <servlet-name>AdminEndpoint</servlet-name>
+        <servlet-class>endpoint.AdminEndpoint</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminEndpoint</servlet-name>
+        <url-pattern>/_api/v1/admin</url-pattern>
+        <url-pattern>/_api/v1/admin/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>BookEndpoint</servlet-name>
+        <servlet-class>endpoint.BookEnpoint</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>BookEndpoint</servlet-name>
+        <url-pattern>/_api/v1/book</url-pattern>
+        <url-pattern>/_api/v1/book/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CategoryEndpoint</servlet-name>
+        <servlet-class>endpoint.CategoryEndpoint</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CategoryEndpoint</servlet-name>
+        <url-pattern>/_api/v1/book/category</url-pattern>
+        <url-pattern>/_api/v1/book/category/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CustomerEndpoint</servlet-name>
+        <servlet-class>endpoint.CustomerEndpoint</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerEndpoint</servlet-name>
+        <url-pattern>/_api/v1/customer</url-pattern>
+        <url-pattern>/_api/v1/customer/*</url-pattern>
+    </servlet-mapping>
+    <!--Adminfilter-->
+    <!--<filter>-->
+        <!--<filter-name>AdminFilter</filter-name>-->
+        <!--<filter-class>endpoint.AdminFilter</filter-class>-->
+    <!--</filter>-->
+    <!--<filter-mapping>-->
+        <!--<filter-name>AdminFilter</filter-name>-->
+        <!--<url-pattern>/_api/v1/book/*</url-pattern>-->
+        <!--<url-pattern>/_api/v1/category/*</url-pattern>-->
+        <!--<url-pattern>/_api/v1/customer/*</url-pattern>-->
+    <!--</filter-mapping>-->
+    <!-- End of Endpoint-->
+
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>shoppingCart</web-resource-name>
+            <url-pattern>/shoppingCart/list</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <welcome-file-list>
+        <welcome-file>HomeController</welcome-file>
+    </welcome-file-list>
+</web-app>
